@@ -1,0 +1,6 @@
+# pack-refs with: peeled fully-peeled sorted 
+7e07f2a9ccbf75ff15e44adf8e0f40e751ba6d42 refs/remotes/origin/chadev
+60db2ec6266e203f2625501488e745ae9c837ecf refs/remotes/origin/main
+8b004cf76543b72631390153e83564b762cadf91 refs/remotes/origin/test
+7611d1390b7d58aaec485586705564b385385e4d refs/tags/0.5
+06c324a1a75f177d032a6bc2e299e82f31c39adc refs/tags/v1.0

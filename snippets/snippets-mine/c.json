@@ -1,0 +1,15 @@
+{
+  "C scope": {
+    "prefix": "cs",
+    "body": [
+      "int",
+      "main(int argc, char* argv[])",
+      "{",
+      " $1",
+      "",
+      " return 0;",
+      "}"
+    ],
+    "description": "C project scope"
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "c project scope": {
+    "prefix": "cs",
+    "body": [
+      "int",
+      "main(int argc, char* argv[])",
+      "{",
+        "  $1",
+        "",
+        "  return 0;",
+        "}"
+    ],
+    "description": "c project scope"
+  },
+  "c complete project scope": {
+    "prefix": "sc",
+    "body": [
+      "#include <stdio.h>",
+      "",
+      "",
+      "int",
+      "main(int argc, char* argv[])",
+      "{",
+        "  $1",
+        "",
+        "  return 0;",
+        "}"
+    ],
+    "description": "c project scope"
+  },
+  "header include": {
+    "prefix": "in",
+    "body": [
+      "#include <${1:header}>"
+    ],
+    "description": "header include"
+  },
+  "custom header include": {
+    "prefix": "inc",
+    "body": [
+      "#include \"${1:header}\""
+    ],
+    "description": "custom header include"
+  },
+  "header define": {
+    "prefix": "def",
+    "body": [
+      "#define ${1}"
+    ],
+    "description": "header define"
+  },
+  "header if": {
+    "prefix": "hif",
+    "body": [
+      "#if ${1:...}",
+      "",
+      "$2",
+      "",
+      "#endif"
+    ],
+    "description": "header if"
+  },
+  "library scope": {
+    "prefix": "hs",
+    "body": [
+      "#ifndef _${1}_H_",
+      "#define _${1}_H_",
+      "",
+      "",
+      "$3",
+      "",
+      "",
+      "#endif"
+    ],
+    "description": "library scope"
+  },
+  "library implementation scope": {
+    "prefix": "chs",
+    "body": [
+      "#include \"${1:header}\"",
+      "",
+      "",
+      "$2"
+    ]
+  },
+  "printf scope": {
+    "prefix": "p",
+    "body": [
+      "printf(\"$1\");"
+    ],
+    "description": "printf scope"
+  },
+  "fprintf scope": {
+    "prefix": "fp",
+    "body": [
+      "fprintf(${1:FILE *restrict __stream}, ${2:const char *restrict __format});"
+    ],
+    "description": "fprintf scope"
+  },
+  "fprintf scope (stdout)": {
+    "prefix": "fpo",
+    "body": [
+      "fprintf(stdout, ${2:const char *restrict __format});"
+    ],
+    "description": "fprintf scope (stdout)"
+  },
+  "scanf scope": {
+    "prefix": "sf",
+    "body": [
+      "scanf(\"${1:%[type]}\", ${2:varname});"
+    ],
+    "description": "scanf scope"
+  },
+  "sprintf scope": {
+    "prefix": "sp",
+    "body": [
+      "sprintf(${1:char *retritct __s}, ${2:const char *restrict __format}, ${3:...});"
+    ],
+    "description": "sprintf scope"
+  },
+  "sscanf scope": {
+    "prefix": "ss",
+    "body": [
+      "sscanf(${1:char *retritct __s}, ${2:const char *restrict __format}, ${3:...});"
+    ],
+    "description": "sscanf scope"
+  },
+  "fgets scope": {
+    "prefix": "fg",
+    "body": [
+      "fgets(${1:char *restrict __s}, ${2:int __n}, ${3:FILE *restrict __stream});"
+    ],
+    "description": "fgets scope"
+  },
+  "fgets scope (string set)": {
+    "prefix": "fgs",
+    "body": [
+      "snippet c_fg_ \"fgets()\" b",
+      "fgets(${1:char *restrict __s}, ${2:int __n}, ${3:FILE *restrict __stream});",
+      "${4:$1}[strcspn(${5:$1}, \"\\r\\n\")] = 0;"
+    ],
+    "description": "fgets scope (string set)"
+  },
+  "fgets scope (non null)": {
+    "prefix": "fgnn",
+    "body": [
+      "fgets_non_null(char *restrict str, int MAX_SIZE)",
+      "{",
+        "  while (str[0] == '\\0' ||",
+          "      str[0] == '\\n' ||",
+          "      str[0] == '\\r')",
+          "    fgets(str, MAX_SIZE, stdin);",
+          "",
+          "  // strtok(str, \"\\r\\n\");",
+          "  str[strcspn(str, \"\\r\\n\")] = 0;",
+          "}"
+    ],
+    "description": "fgets scope (non null)"
+  },
+  "ncurses scope": {
+    "prefix": "nc",
+    "body": [
+      "initscr();",
+      "",
+      "$1",
+      "",
+      "endwin();"
+    ],
+    "description": "ncurses scope"
+  },
+  "refresh scope": {
+    "prefix": "ref",
+    "body": [
+      "refresh();"
+    ],
+    "description": "refresh scope"
+  },
+  "wrefresh scope": {
+    "prefix": "wref",
+    "body": [
+      "wrefresh(${1:WINDOW *win});"
+    ],
+    "description": "wrefresh scope"
+  },
+  "printw scope": {
+    "prefix": "pw",
+    "body": [
+      "printw(${1:const char *});"
+    ],
+    "description": "printw scope"
+  },
+  "wprintw scope": {
+    "prefix": "wpw",
+    "body": [
+      "wprintw(${1:WINDOW *win}, ${2:const char *});"
+    ],
+    "description": "wprintw scope"
+  },
+  "mvprintw scope": {
+    "prefix": "mvpw",
+    "body": [
+      "mvprintw(${1:int y} ,${2:int x} , ${3:const char *});"
+    ],
+    "description": "mvprintw scope"
+  },
+  "mvwprintw scope": {
+    "prefix": "mvwpw",
+    "body": [
+      "mvwprintw(${1:WINDOW *win}, ${2:int y} ,${3:int x} , ${4:const char *});"
+    ],
+    "description": "mvwprintw scope"
+  },
+  "c function scope": {
+    "prefix": "fn",
+    "body": [
+      "${1:T}",
+      "${2:func_name} (${3:...})",
+      "{",
+        "  return ${4:T};",
+        "}"
+    ],
+    "description": "c function scope"
+  },
+  "c function pure scope": {
+    "prefix": "fns",
+    "body": [
+      "${1:T}",
+      "${2:func_name} (${3:...});"
+    ],
+    "description": "c function pure scope"
+  },
+  "c method scope": {
+    "prefix": "me",
+    "body": [
+      "void",
+      "${1:method_name} (${2:...})",
+      "{",
+        "  $3",
+        "}"
+    ],
+    "description": "c method scope"
+  },
+  "c method pure scope": {
+    "prefix": "mes",
+    "body": [
+      "void",
+      "${1:method_name} (${2:...});"
+    ],
+    "description": "c method pure scope"
+  },
+  "struct scope": {
+    "prefix": "st",
+    "body": [
+      "struct ${1:Struct_name}",
+      "{",
+        "  $2",
+        "};"
+    ],
+    "description": "struct scope"
+  },
+  "inline struct scope": {
+    "prefix": "sti",
+    "body": [
+      "struct ${1:Struct_name} { $2 };"
+    ],
+    "description": "inline struct scope"
+  },
+  "typedef struct scope": {
+    "prefix": "tst",
+    "body": [
+      "typedef struct ${1:Struct_name}",
+      "{",
+        "  $3",
+        "} ${2:St_alias};"
+    ],
+    "description": "typedef struct scope"
+  },
+  "inline typedef struct scope": {
+    "prefix": "tsti",
+    "body": [
+      "typedef struct ${1:Struct_name} { $3 } ${2:St_alias};"
+    ],
+    "description": "inline typedef struct scope"
+  },
+  "c macro scope": {
+    "prefix": "ma",
+    "body": [
+      "${1:T}",
+      "(${2:macro_name}) (${3:...})",
+      "{",
+        "  $5",
+        "",
+        "  return ${4:T};",
+        "}"
+    ],
+    "description": "c macro scope"
+  },
+  "c macro pure scope": {
+    "prefix": "mas",
+    "body": [
+      "${1:T}",
+      "(${2:macro_name}) (${3:...});"
+    ],
+    "description": "c macro pure scope"
+  },
+  "if scope": {
+    "prefix": "if",
+    "body": [
+      "if (${1:...}) {",
+        "  $2",
+        "}"
+    ],
+    "description": "if scope"
+  },
+  "switch case scope": {
+    "prefix": "sw",
+    "body": [
+      "switch (${1:...}) {",
+        "  case ${2:...}:",
+        "    $3",
+        "    break;",
+        "}"
+    ],
+    "description": "switch case scope"
+  },
+  "for scope": {
+    "prefix": "for",
+    "body": [
+      "for (${1:INIT}; ${2:COND}; ${3:INC}) {",
+        "  $4",
+        "}"
+    ],
+    "description": "for scope"
+  },
+  "while scope": {
+    "prefix": "wh",
+    "body": [
+      "while (${1:...}) {",
+        "  $2",
+        "}"
+    ],
+    "description": "while scope"
+  },
+  "do while scope": {
+    "prefix": "dw",
+    "body": [
+      "do {",
+        "  $2",
+        "} while(${1:...})"
+    ],
+    "description": "do while scope"
+  }
+}
