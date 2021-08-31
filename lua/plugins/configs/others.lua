@@ -53,13 +53,6 @@ M.blankline = function()
   vim.g.indent_blankline_show_first_indent_level = false
 end
 
-M.hexokinase = function()
-  local present, hexokinase = pcall(require, "vim-hexokinase")
-  if not present then
-    return
-  end
-end
-
 -- M.colorizer = function()
 --   local present, colorizer = pcall(require, "colorizer")
 --   if present then
@@ -133,5 +126,4 @@ M.signature = function()
     }
   end
 end
-
 return M

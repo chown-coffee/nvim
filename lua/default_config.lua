@@ -104,7 +104,7 @@ M.plugin_status = {
 M.mappings = {
   -- close current focused buffer
   close_buffer = "<leader>x",
-  copy_whole_file = "<C-a>", -- copy all contents of the current buffer
+  copy_whole_file = "<A-z>", -- copy all contents of the current buffer
 
   -- navigation in insert mode, only if enabled in options
   insert_nav = {

@@ -12,6 +12,11 @@ return packer.startup(function()
   -- this is arranged on the basis of when a plugin starts
 
   -- this is the nvchad core repo containing utilities for some features like theme swticher, no need to lazy load
+  --
+  use {
+    'terryma/vim-multiple-cursors',
+  }
+
   use {
     "Nvchad/extensions",
   }
@@ -93,9 +98,6 @@ return packer.startup(function()
   use {
     "RRethy/vim-hexokinase",
     run = "make hexokinase",
-    config = function()
-      require("plugins.config.others").hexokinase()
-    end,
   }
 
   use {
