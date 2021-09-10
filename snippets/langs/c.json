@@ -5,10 +5,10 @@
       "int",
       "main(int argc, char* argv[])",
       "{",
-        "  $1",
-        "",
-        "  return 0;",
-        "}"
+      "\t$1",
+      "",
+      "\treturn 0;",
+      "}"
     ],
     "description": "c project scope"
   },
@@ -21,12 +21,12 @@
       "int",
       "main(int argc, char* argv[])",
       "{",
-        "  $1",
-        "",
-        "  return 0;",
-        "}"
+      "\t$1",
+      "",
+      "\treturn 0;",
+      "}"
     ],
-    "description": "c project scope"
+    "description": "c complete project scope"
   },
   "header include": {
     "prefix": "in",
@@ -135,7 +135,6 @@
   "fgets scope (string set)": {
     "prefix": "fgs",
     "body": [
-      "snippet c_fg_ \"fgets()\" b",
       "fgets(${1:char *restrict __s}, ${2:int __n}, ${3:FILE *restrict __stream});",
       "${4:$1}[strcspn(${5:$1}, \"\\r\\n\")] = 0;"
     ],
@@ -146,14 +145,14 @@
     "body": [
       "fgets_non_null(char *restrict str, int MAX_SIZE)",
       "{",
-        "  while (str[0] == '\\0' ||",
-          "      str[0] == '\\n' ||",
-          "      str[0] == '\\r')",
-          "    fgets(str, MAX_SIZE, stdin);",
-          "",
-          "  // strtok(str, \"\\r\\n\");",
-          "  str[strcspn(str, \"\\r\\n\")] = 0;",
-          "}"
+      "\twhile (str[0] == '\\0' ||",
+      "\t\t\tstr[0] == '\\n' ||",
+      "\t\t\tstr[0] == '\\r')",
+      "\t\tfgets(str, MAX_SIZE, stdin);",
+      "",
+      "\t// strtok(str, \"\\r\\n\");",
+      "\tstr[strcspn(str, \"\\r\\n\")] = 0;",
+      "}"
     ],
     "description": "fgets scope (non null)"
   },
@@ -216,8 +215,8 @@
       "${1:T}",
       "${2:func_name} (${3:...})",
       "{",
-        "  return ${4:T};",
-        "}"
+      "\treturn ${4:T};",
+      "}"
     ],
     "description": "c function scope"
   },
@@ -235,8 +234,8 @@
       "void",
       "${1:method_name} (${2:...})",
       "{",
-        "  $3",
-        "}"
+      "\t$3",
+      "}"
     ],
     "description": "c method scope"
   },
@@ -253,8 +252,8 @@
     "body": [
       "struct ${1:Struct_name}",
       "{",
-        "  $2",
-        "};"
+      "\t$2",
+      "};"
     ],
     "description": "struct scope"
   },
@@ -270,8 +269,8 @@
     "body": [
       "typedef struct ${1:Struct_name}",
       "{",
-        "  $3",
-        "} ${2:St_alias};"
+      "\t$3",
+      "} ${2:St_alias};"
     ],
     "description": "typedef struct scope"
   },
@@ -288,10 +287,10 @@
       "${1:T}",
       "(${2:macro_name}) (${3:...})",
       "{",
-        "  $5",
-        "",
-        "  return ${4:T};",
-        "}"
+      "\t$5",
+      "",
+      "\treturn ${4:T};",
+      "}"
     ],
     "description": "c macro scope"
   },
@@ -307,8 +306,8 @@
     "prefix": "if",
     "body": [
       "if (${1:...}) {",
-        "  $2",
-        "}"
+      "\t$2",
+      "}"
     ],
     "description": "if scope"
   },
@@ -316,10 +315,10 @@
     "prefix": "sw",
     "body": [
       "switch (${1:...}) {",
-        "  case ${2:...}:",
-        "    $3",
-        "    break;",
-        "}"
+      "\tcase ${2:...}:",
+      "\t\t$3",
+      "\t\tbreak;",
+      "}"
     ],
     "description": "switch case scope"
   },
@@ -327,8 +326,8 @@
     "prefix": "for",
     "body": [
       "for (${1:INIT}; ${2:COND}; ${3:INC}) {",
-        "  $4",
-        "}"
+      "\t$4",
+      "}"
     ],
     "description": "for scope"
   },
@@ -336,8 +335,8 @@
     "prefix": "wh",
     "body": [
       "while (${1:...}) {",
-        "  $2",
-        "}"
+      "\t$2",
+      "}"
     ],
     "description": "while scope"
   },
@@ -345,8 +344,8 @@
     "prefix": "dw",
     "body": [
       "do {",
-        "  $2",
-        "} while(${1:...})"
+      "\t$2",
+      "} while(${1:...})"
     ],
     "description": "do while scope"
   }
