@@ -227,6 +227,10 @@ vim.api.nvim_set_keymap('n', '<leader>PB', ':Lines<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>PP', ':Buffers<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>PH', ':History:<CR>', {})
 
+-- terminal
+vim.api.nvim_set_keymap('n', '<A-t>', ':FloatermNew<CR>', {});
+vim.api.nvim_set_keymap('n', '<A-r>', ':FloatermNew ranger<CR>', {});
+
 -- hexokinase
 
 -- Vim default

@@ -30,6 +30,14 @@ return packer.startup(function()
     "nvim-lua/plenary.nvim",
   }
 
+  use {
+    "voldikss/vim-floaterm",
+  }
+
+  use {
+    "andweeb/presence.nvim",
+  }
+
   --   use "alvan/vim-closetag" -- for html autoclosing tag
   use {
     "tpope/vim-commentary",
