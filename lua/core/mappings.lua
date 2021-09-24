@@ -44,7 +44,7 @@ M.misc = function()
     if config.options.insert_nav then
       local inav = maps.insert_nav
 
-      map("i", inav.backward, "<Left>")
+      -- map("i", inav.backward, "<Left>")
       map("i", inav.end_of_line, "<End>")
       map("i", inav.forward, "<Right>")
       map("i", inav.next_line, "<Up>")
@@ -120,9 +120,9 @@ end
 
 -- below are all plugin related mappinsg
 
-M.better_escape = function()
-  vim.g.better_escape_shortcut = plugin_maps.better_escape.esc_insertmode or { "" }
-end
+-- M.better_escape = function()
+--   vim.g.better_escape_shortcut = plugin_maps.better_escape.esc_insertmode or { "" }
+-- end
 
 M.bufferline = function()
   local m = plugin_maps.bufferline
