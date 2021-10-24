@@ -143,11 +143,12 @@
   "fgets scope (non null)": {
     "prefix": "fgnn",
     "body": [
-      "fgets_non_null(char *restrict str, int MAX_SIZE)",
+      "void",
+      "fgets_non_null(char* __restrict str, int MAX_SIZE)",
       "{",
-      "\twhile (str[0] == '\\0' ||",
-      "\t\t\tstr[0] == '\\n' ||",
-      "\t\t\tstr[0] == '\\r')",
+      "\twhile (str[0] == '\\0'",
+      "\t\t\t|| str[0] == '\\n'",
+      "\t\t\t|| str[0] == '\\r')",
       "\t\tfgets(str, MAX_SIZE, stdin);",
       "",
       "\t// strtok(str, \"\\r\\n\");",
@@ -213,7 +214,7 @@
     "prefix": "fn",
     "body": [
       "${1:T}",
-      "${2:func_name} (${3:...})",
+      "${2:func_name}(${3:...})",
       "{",
       "\treturn ${4:T};",
       "}"
@@ -224,7 +225,7 @@
     "prefix": "fns",
     "body": [
       "${1:T}",
-      "${2:func_name} (${3:...});"
+      "${2:func_name}(${3:...});"
     ],
     "description": "c function pure scope"
   },
@@ -232,7 +233,7 @@
     "prefix": "me",
     "body": [
       "void",
-      "${1:method_name} (${2:...})",
+      "${1:method_name}(${2:...})",
       "{",
       "\t$3",
       "}"
@@ -243,7 +244,7 @@
     "prefix": "mes",
     "body": [
       "void",
-      "${1:method_name} (${2:...});"
+      "${1:method_name}(${2:...});"
     ],
     "description": "c method pure scope"
   },
@@ -285,7 +286,7 @@
     "prefix": "ma",
     "body": [
       "${1:T}",
-      "(${2:macro_name}) (${3:...})",
+      "(${2:macro_name})(${3:...})",
       "{",
       "\t$5",
       "",
@@ -298,7 +299,7 @@
     "prefix": "mas",
     "body": [
       "${1:T}",
-      "(${2:macro_name}) (${3:...});"
+      "(${2:macro_name})(${3:...});"
     ],
     "description": "c macro pure scope"
   },
@@ -345,7 +346,7 @@
     "body": [
       "do {",
       "\t$2",
-      "} while(${1:...})"
+      "} while (${1:...})"
     ],
     "description": "do while scope"
   }

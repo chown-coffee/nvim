@@ -227,6 +227,13 @@ vim.api.nvim_set_keymap('n', '<leader>PB', ':Lines<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>PP', ':Buffers<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>PH', ':History:<CR>', {})
 
+-- general
+vim.api.nvim_set_keymap('n', ';', 'A;<Esc>', {})
+
+-- sed
+vim.api.nvim_set_keymap('n', '<A-s>', ':%s//gI<Left><Left><Left>', {})
+vim.api.nvim_set_keymap('n', '<leader><A-s>', ':cfdo %s//gI<Space>|<Space>update<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>', {})
+
 -- terminal
 vim.api.nvim_set_keymap('n', '<A-t>', ':FloatermNew<CR>', {});
 vim.api.nvim_set_keymap('n', '<A-r>', ':FloatermNew ranger<CR>', {});
