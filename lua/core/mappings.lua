@@ -228,7 +228,7 @@ vim.api.nvim_set_keymap('n', '<leader>PP', ':Buffers<CR>', {})
 vim.api.nvim_set_keymap('n', '<leader>PH', ':History:<CR>', {})
 
 -- general
-vim.api.nvim_set_keymap('n', ';', 'A;<Esc>', {})
+vim.api.nvim_set_keymap('n', '\';', 'A;<Esc>', {})
 
 -- sed
 vim.api.nvim_set_keymap('n', '<A-s>', ':%s//gI<Left><Left><Left>', {})
